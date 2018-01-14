@@ -1,5 +1,5 @@
 # This assembler code is Copyright (C) 2009 Billy Holmes at gonoph.net
-# Copyright (C) 2010 (fixed a logic bug)
+# Copyright (C) 2010,2018 (fixed a logic bug, and to run in newer gcc)
 # Released and Licensed under GPLv2
 # http://www.gonoph.net/gpl-2.0.txt
 # Lyrics upon which it is based by Richard O'Brien and Richard Hartley
@@ -24,7 +24,6 @@ tight:
 # it's just a:
 
 main:
-   .global _start
    jmp timewarp
 
 timewarp:
@@ -53,5 +52,3 @@ _drives_insane:
    ret
 again:
    jmp timewarp
-
-
