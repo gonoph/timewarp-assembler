@@ -1,11 +1,15 @@
 .PHONY: all clean
 
-LDFLAGS=-m32
+# DEBUG=-ggdb
+ASFLAGS=--32 $(DEBUG)
+LDFLAGS=-m elf_i386
 
 all: tw
 
 clean:
-	rm -r tw
+	rm -r tw tw.o
 
-tw: tw.s
-	gcc $(LDFLAGS) -o $@ tw.s
+tw.o: tw.s
+
+tw: tw.o
+	$(LD) $(LDFLAGS) -o $@ tw.o
